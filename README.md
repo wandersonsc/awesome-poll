@@ -13,7 +13,7 @@
 1. Get the code:
 
 ```
-git clone https://github.com/wandersonsc/basic_blog_api
+git clone https://github.com/wandersonsc/awesome-poll
 ```
 
 2. Run it! Assuming you have Python setup, run the following commands:

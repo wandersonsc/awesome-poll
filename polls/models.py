@@ -11,9 +11,10 @@ class Question(models.Model):
     title = models.CharField(_('Title'), max_length=200)
     body = models.TextField(_('Content'), blank=True, null=True)
     slug = AutoSlugField(_('Slug'), populate_from=['title', ])
-    status = models.BooleanField(_('Status'), default=False)
+    active = models.BooleanField(_('Active'), default=False)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True,
-                                   on_delete=models.CASCADE, related_name='questions', verbose_name=_('Author')
+                                   on_delete=models.CASCADE, related_name='questions',
+                                   verbose_name=_('Author')
                                    )
 
     created_at = models.DateTimeField(auto_now_add=True)
