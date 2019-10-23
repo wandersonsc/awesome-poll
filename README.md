@@ -1,5 +1,9 @@
 ## Awesome Poll app
 
+[![Build Status](https://travis-ci.org/wandersonsc/awesome-poll.svg?branch=master)](https://travis-ci.org/wandersonsc/awesome-poll)
+
+[![codecov](https://codecov.io/gh/wandersonsc/awesome-poll/branch/master/graph/badge.svg)](https://codecov.io/gh/wandersonsc/awesome-poll)
+
 ### Poll site using best practices for Test Driven Development (TDD) & Pytest
 
 ## Technology Stack
