@@ -1,11 +1,19 @@
 from django.contrib import admin
 
 from .models import Question
+from choices.models import Choice
+
+
+class BookInline(admin.TabularInline):
+    model = Choice
 
 
 class CustomQuestionAdmin(admin.ModelAdmin):
-    # The fields to be used in displaying the Exams model.
+    """ The fields to be used in displaying the question model """
 
+    inlines = [
+        BookInline,
+    ]
     model = Question
     list_display = (
         'title',

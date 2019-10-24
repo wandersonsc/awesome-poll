@@ -1,9 +1,16 @@
 import pytest
-from django.contrib.auth import get_user_model
-
-User = get_user_model()
+from mixer.backend.django import mixer
 
 
-# @pytest.fixture
+@pytest.fixture
+def choice(db, question):
 
-# def password(x): return '.'.join([random.choice(string.ascii_lowercase) for i in range(10)])
+    choice = mixer.blend('choices.Choice', question=question, title='My Awesome Quiz')
+    return choice
+
+
+@pytest.fixture
+def question(db):
+
+    question = mixer.blend('polls.Question')
+    return question

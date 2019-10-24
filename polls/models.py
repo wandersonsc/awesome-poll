@@ -33,5 +33,6 @@ class Question(models.Model):
         return self.title
 
     class Meta:
+
         verbose_name = 'Question Manager'
         verbose_name_plural = 'Questions Manager'

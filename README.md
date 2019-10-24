@@ -28,3 +28,12 @@ python3 manage.py createsuperuser
 python3 manage.py runserver
 
 ```
+
+## Testing
+
+To run the tests, check your test coverage, and generate a simplified coverage report & flake8:
+
+```sh
+pytest or pytest & flake8
+
+```

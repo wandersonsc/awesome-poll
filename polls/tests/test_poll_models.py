@@ -1,7 +1,8 @@
-from mixer.backend.django import mixer
+def test_poll_models(question):
+
+    assert question.pk == 1
 
 
-def test_poll_models(db):
+def test_string_representation(question):
 
-    poll = mixer.blend('polls.Question')
-    assert poll.pk == 1
+    assert str(question) == question.title
