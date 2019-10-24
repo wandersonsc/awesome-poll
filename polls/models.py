@@ -5,6 +5,18 @@ from django.utils.translation import gettext_lazy as _
 from django_extensions.db.fields import AutoSlugField
 
 
+class QuestionManager(models.Manager):
+    """ Custom Manager """
+
+    def all(self):
+
+        return Question.objects.filter(approved_question=True)
+
+    def pending_approval(self):
+
+        return super().get_queryset().filter(approved_question=False)
+
+
 class Question(models.Model):
     """ Question Models """
 
@@ -23,6 +35,11 @@ class Question(models.Model):
     created_at = models.DateTimeField(_('Create date'), auto_now_add=True)
     updated_at = models.DateTimeField(_('Update date'), auto_now=True)
 
+    class Meta:
+
+        verbose_name = 'Question Manager'
+        verbose_name_plural = 'Questions Manager'
+
     def approve(self):
 
         self.approved_question = True
@@ -32,7 +49,4 @@ class Question(models.Model):
 
         return self.title
 
-    class Meta:
-
-        verbose_name = 'Question Manager'
-        verbose_name_plural = 'Questions Manager'
+    objects = QuestionManager()  # Custom manager

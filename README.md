@@ -10,6 +10,10 @@
 - Travis
 - Pytest
 
+## Contributing
+
+Fell free to give advice, code reviews or any other ideas
+
 ## Get the code and start the server.
 
 1. Get the code:
