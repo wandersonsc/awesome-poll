@@ -11,19 +11,19 @@ class CustomQuestionAdmin(admin.ModelAdmin):
         'title',
         'slug',
         'body',
-        'active',
-        'created_by',
+        'approved_question',
+        'author',
         'created_at',
         'updated_at',
 
     )
     list_select_related = (
-        'created_by',
+        'author',
     )
     list_filter = (
         'title',
-        'active',
-        'created_by'
+        'approved_question',
+        'author'
     )
 
     fieldsets = (
@@ -36,29 +36,28 @@ class CustomQuestionAdmin(admin.ModelAdmin):
             'description': "Designates a body of exam to question",
         }),
         ('Question status:', {
-            'fields': ('active',),
-            'description': "Switch between approved question",
+            'fields': ('approved_question',),
+            'description': "Switch between approved or unapproved question",
         }),
 
     )
 
     search_fields = (
         'title',
-        'status'
+        'approved_question'
     )
     ordering = (
         'created_at',
 
     )
-    # exclude=['created_by', ]
     filter_horizontal = ()
     empty_value_display = 'None'
     list_per_page = 8
 
     def save_model(self, request, obj, form, change):
-        #  required to add user's name to the created_by field
+        #  required to add user's name to the author field
 
-        obj.created_by = request.user
+        obj.author = request.user
         super().save_model(request, obj, form, change)
 
 
