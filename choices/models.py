@@ -20,6 +20,8 @@ class Choice(models.Model):
 
         unique_together = ['question', 'text']
         ordering = ['-created_at']
+        verbose_name = 'Choice Manager'
+        verbose_name_plural = 'Choices Manager'
 
     def __str__(self):
 
