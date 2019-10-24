@@ -37,3 +37,5 @@ To run the tests, check your test coverage, and generate a simplified coverage r
 pytest or pytest & flake8
 
 ```
+
+![](photo/pytest.png)
