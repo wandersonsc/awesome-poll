@@ -1,17 +1,15 @@
-import pytest
 
 from django.urls import reverse
 
-URL = reverse('home')
 
+def test_polls_list_status_code(client):
 
-def test_home_page_status_code(client):
-
-    resp = client.get('/')
+    resp = client.get('/polls/')
     assert resp.status_code == 200
 
 
 def test_view_url_by_name(client):
 
-    resp = client.get(URL)
+    url = reverse('polls:all')
+    resp = client.get(url)
     assert resp.status_code == 200

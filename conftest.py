@@ -1,4 +1,6 @@
 import pytest
+from django.test import Client
+
 from mixer.backend.django import mixer
 
 
@@ -7,6 +9,13 @@ def choice(db, question):
 
     choice = mixer.blend('choices.Choice', question=question, title='My Awesome Quiz')
     return choice
+
+
+@pytest.fixture
+def client(db):
+
+    client = Client()
+    return client
 
 
 @pytest.fixture

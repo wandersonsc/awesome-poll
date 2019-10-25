@@ -11,6 +11,9 @@ urlpatterns = [
 
     # home
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+
+    # polls
+    path('polls/', include('polls.urls', namespace='polls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

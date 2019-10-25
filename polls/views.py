@@ -1,3 +1,18 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
-# Create your views here.
+from .models import Question
+
+
+class PollListView(ListView):
+
+    model = Question
+    template_name = 'polls/polls_list.html'
+    context_object_name = 'polls'
+
+
+class PollDetailView(DetailView):
+
+    model = Question
+    template_name = 'polls/polls_detail.html'
+    context_object_name = 'polls'
