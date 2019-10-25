@@ -1,6 +1,8 @@
 
 from django.urls import reverse
 
+URL = reverse('polls:all')
+
 
 def test_polls_list_status_code(client):
 
@@ -10,6 +12,5 @@ def test_polls_list_status_code(client):
 
 def test_view_url_by_name(client):
 
-    url = reverse('polls:all')
-    resp = client.get(url)
+    resp = client.get(URL)
     assert resp.status_code == 200

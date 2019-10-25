@@ -23,3 +23,10 @@ def question(db):
 
     question = mixer.blend('polls.Question')
     return question
+
+
+@pytest.fixture
+def answer(db):
+
+    answer = mixer.blend('answers.Answer')
+    return answer

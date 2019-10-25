@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <div class="container">
-    {% for poll in polls %}
+  {% for question in questions %}
 
-    <a href="{{ poll.get_absolute_url }}">{{ poll.title }}</a>
-
-    {% endfor %}
+  <a href="{{ question.get_absolute_url }}">
+    <h4>{{ question.title }}</h4>
+  </a>
+  <h6>
+    Author:
+    <span class="badge badge-info">{{ question.author }}</span>
+  </h6>
+  {% empty %}
+  <p>No questions available yet!</p>
+  {% endfor %}
 </div>
+
 {% endblock %}

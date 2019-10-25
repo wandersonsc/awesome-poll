@@ -21,6 +21,7 @@ INSTALLED_APPS = [
 
     # locals
     'accounts',
+    'answers',
     'choices',
     'polls',
 

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}{{ questions.title|truncatechars:10 }} {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">{{ questions.title }}</h1>
+            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            Author:
+
+        </div>
+        {% for choice in questions.question_choices %}
+        {{choice.text}} - <span class="badge badge-info">{{ choice.votes }}</span>
+        {% empty %}
+        <p>No choice available yet!</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

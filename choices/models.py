@@ -23,6 +23,11 @@ class Choice(models.Model):
         verbose_name = 'Choice Manager'
         verbose_name_plural = 'Choices Manager'
 
+    @property
+    def votes(self):
+
+        return self.answer_choices.count()
+
     def __str__(self):
 
-        return self.title
+        return self.text
