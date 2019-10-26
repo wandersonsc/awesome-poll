@@ -1,5 +1,5 @@
 exclude_paths:
-  - ".MD/**"
+  - "**.MD"
   - "**/tests/**"
   - "**static-server/**"
   - "**tempates/**"
