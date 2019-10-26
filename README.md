@@ -1,6 +1,6 @@
 ## Awesome Poll app
 
-[![Build Status](https://travis-ci.org/wandersonsc/awesome-poll.svg?branch=master)](https://travis-ci.org/wandersonsc/awesome-poll) [![codecov](https://codecov.io/gh/wandersonsc/awesome-poll/branch/master/graph/badge.svg)](https://codecov.io/gh/wandersonsc/awesome-poll)
+[![Build Status](https://travis-ci.org/wandersonsc/awesome-poll.svg?branch=master)](https://travis-ci.org/wandersonsc/awesome-poll) [![codecov](https://codecov.io/gh/wandersonsc/awesome-poll/branch/master/graph/badge.svg)](https://codecov.io/gh/wandersonsc/awesome-poll)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dcd214f5cb8f407d8e2af307e5efd074)](https://www.codacy.com/manual/wandersonsc/awesome-poll?utm_source=github.com&utm_medium=referral&utm_content=wandersonsc/awesome-poll&utm_campaign=Badge_Grade)
 
 ### Poll site using best practices for Test Driven Development (TDD) & Pytest
 

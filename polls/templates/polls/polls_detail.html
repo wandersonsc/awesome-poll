@@ -10,7 +10,8 @@
 
         </div>
         {% for choice in questions.question_choices %}
-        {{choice.text}} - <span class="badge badge-info">{{ choice.votes }}</span>
+        <h4>{{choice.text}} - <span class="badge badge-info">{{ choice.votes }}</span></h4>
+        <h2>{{choice.get_results}} </h2>
         {% empty %}
         <p>No choice available yet!</p>
         {% endfor %}
