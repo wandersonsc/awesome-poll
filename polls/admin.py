@@ -14,6 +14,7 @@ class CustomQuestionAdmin(admin.ModelAdmin):
     inlines = [
         BookInline,
     ]
+
     model = Question
     list_display = (
         'title',
@@ -27,6 +28,7 @@ class CustomQuestionAdmin(admin.ModelAdmin):
     )
     list_select_related = (
         'author',
+
     )
     list_filter = (
         'title',
@@ -70,3 +72,5 @@ class CustomQuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Question, CustomQuestionAdmin)
+admin.site.site_header = 'Polls Inc. Administration'
+admin.site.site_title = 'Admin Only'

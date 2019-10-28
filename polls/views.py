@@ -1,18 +1,21 @@
 # from django.shortcuts import render
+from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import ListView, DetailView
 
-from .models import Question
+
+from .mixins import QuestionMixinx
+from braces.views import SelectRelatedMixin, PrefetchRelatedMixin
 
 
-class PollListView(ListView):
+class PollListView(SelectRelatedMixin, QuestionMixinx, ListView):
 
-    model = Question
+    select_related = ['author']
+    success_message = "Welcome!"
     template_name = 'polls/polls_list.html'
-    context_object_name = 'questions'
 
 
-class PollDetailView(DetailView):
+class PollDetailView(PrefetchRelatedMixin, SelectRelatedMixin, QuestionMixinx, DetailView):
 
-    model = Question
+    prefetch_related = ['choices__answer_choices']
+    select_related = ['author']
     template_name = 'polls/polls_detail.html'
-    context_object_name = 'questions'

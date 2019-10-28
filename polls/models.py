@@ -41,7 +41,6 @@ class Question(models.Model):
         verbose_name = 'Question Manager'
         verbose_name_plural = 'Questions Manager'
 
-    @property
     def question_choices(self):
 
         return self.choices.all()
