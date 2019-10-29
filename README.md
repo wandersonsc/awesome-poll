@@ -22,7 +22,13 @@ Fell free to give advice, code reviews or any other ideas
 git clone https://github.com/wandersonsc/awesome-poll
 ```
 
-2. Run it! Assuming you have Python setup, run the following commands:
+2. Create a virtualenv:
+
+```sh
+python3 -m venv virtualenv
+```
+
+3. Run it! Assuming you have Python setup, run the following commands:
 
 ```sh
 pip3 install -r requirements.txt

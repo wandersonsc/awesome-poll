@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Vote {% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">{{ questions.title }}</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {% for choice in questions.question_choices %}
+                <label class="lead">{{choice.text}}</label>
+                <input type="radio" name="choice" value="{{choice.id}}">
+                {% empty %}
+                <p>No choice available yet!</p>
+                {% endfor %}
+                <button class="btn btn-info" type="submit">Vote</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -18,7 +18,6 @@ class Answer(models.Model):
                                related_name='answer_choices',
                                verbose_name=_('Choice')
                                )
-    answer = models.CharField(_('Answer'), max_length=200, unique=True)
     created_at = models.DateTimeField(_('Create date'), auto_now_add=True)
     updated_at = models.DateTimeField(_('Update date'), auto_now=True)
 
@@ -30,4 +29,4 @@ class Answer(models.Model):
 
     def __str__(self):
 
-        return self.answer
+        return f'Choice {self.choice}'

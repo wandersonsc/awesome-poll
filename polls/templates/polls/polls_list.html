@@ -4,12 +4,14 @@
   {% for question in questions %}
 
   <a href="{{ question.get_absolute_url }}">
-    <h4>{{ question.title }}</h4>
+    <h4>{{ question.title|truncatechars:30 }}</h4>
   </a>
   <h6>
     Author:
     <span class="badge badge-info">{{ question.author }}</span>
   </h6>
+
+  <a href="{% url 'polls:votes' slug=question.slug %}" class=" btn btn-outline-success">Vote</a>
   {% empty %}
   <p>No questions available yet!</p>
   {% endfor %}

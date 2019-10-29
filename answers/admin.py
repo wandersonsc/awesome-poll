@@ -8,7 +8,6 @@ class CustomAnswerAdmin(admin.ModelAdmin):
     model = Answer
 
     list_display = (
-        'answer',
         'user',
         'choice',
         'created_at',
@@ -24,10 +23,7 @@ class CustomAnswerAdmin(admin.ModelAdmin):
     )
 
     fieldsets = (
-        ("Answer:", {
-            'fields': ('answer',),
-            'description': "Designates na answer ",
-        }),
+
         ('Choice:', {
             'fields': ('choice',),
             'description': "Designates a choice",

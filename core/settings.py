@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     # Pip
     'braces',
+    'crispy_forms',
     'debug_toolbar',
     'django_extensions',
 ]
@@ -141,3 +142,7 @@ def show_toolbar(request):
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
     'SHOW_TOOLBAR_CALLBACK': show_toolbar}
+
+
+# django-crispy-forms Settings
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
