@@ -117,6 +117,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-server')
 
+# Custom Django auth settings
+
+LOGIN_URL = 'login'
+
+LOGOUT_URL = 'logout'
+
+LOGIN_REDIRECT_URL = 'polls:all'
+
+LOGOUT_REDIRECT_URL = 'home'
+
 
 # DEBUG TOOLBAR SETTINGS
 DEBUG_TOOLBAR_PANELS = [

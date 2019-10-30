@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Log In! {% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <!-- print form error into the template -->
+    {% for error_field, error_message in form.errors.items %}
+    <div class="alert alert-warning alert-dismissible fade show mt-5" role="alert">
+        <strong>{{ error_field|striptags }}:</strong> {{ error_message|striptags }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    <h2>Log In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <button type="submit" class="btn btn-outline-success">Sign up</button>
+    </form>
+</div>
+{% endblock %}

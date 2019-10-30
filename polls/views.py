@@ -1,7 +1,6 @@
-# from django.shortcuts import render
-from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import ListView, DetailView, CreateView
-from django.shortcuts import get_object_or_404, render, Http404, HttpResponse
+# from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic import ListView, DetailView
+from django.shortcuts import render, Http404, HttpResponse
 
 from .models import Question
 
