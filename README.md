@@ -4,6 +4,10 @@
 
 ### Poll site using best practices for Test Driven Development (TDD) & Pytest
 
+### Applying django advanced concepts like:
+
+# Custom context processor and template tags and filters, mixins and advanced testing topics.
+
 ## Technology Stack
 
 - Python
@@ -45,6 +49,30 @@ To run the tests, check your test coverage, and generate a simplified coverage r
 
 ```sh
 pytest or pytest & flake8
+
+```
+
+# Custom context processor.
+
+Context_processors.py
+
+```python
+ def polls_count(request):
+
+    count = Question.objects.count()
+    return {'polls_count': count}
+
+```
+
+HTML template
+
+```python
+    {% with total=polls_count %}
+        <a class="p-2 text-dark" href="{% url 'polls:all' %}">
+            Poll{{total|pluralize}}
+            <span class="badge badge-light btn btn-primary">{{total}}</span>
+        </a>
+    {% endwith %}
 
 ```
 
